@@ -1,0 +1,38 @@
+TP 5 :Cinéma 
+Binome: Sugeevan SUGUNAPARAJAN, NEIL TOFFA
+
+Le but de ce TP est la mise en place d'un code c qui dans une base de donnée (ici un fichier txt) va chercher dans cette base de donnée le tître d'un film,son année de sortie,son réalisateur ,ses acteurs principaux ,sa durée et son genre .
+Pour chaque réalisateur le nom,prénom , date et lieu de naissance doit être stocké dans la base de donnée .
+Pour ce faire nous avons créer 3 scripts.Le cinema.c regroupant le programme des fonctions, le cinéma.h qui  contient toutes les déclarations de fonctions (prototypes des fonctions) ainsi que les structures et pour finir le fichier main (fichier principale)qui contient la fonction principale .
+
+Cinéma.h :
+Ce script est constitué du typre struct S_réalisateur qui est lui même composé du nom du réalisateur ,sa date de naissance et son lieu de naissance, du type S_acteur qui contient  le nom des acteurs .
+Le type film qui contient son nom, son genre...
+Enfin nous avons les différents prototypes des fonctions utilisés :
+void liste_film(Film *movies);
+void liste_realisateur(Film *movies);
+void recherche_film(Film *movies);
+void listeFilmParAnnee(Film *movies);
+
+Cinéma.c :
+La fonction Film *bdd_cinema(FILE *fichier); est la plus complexe car elle permet d'extraire les information du fichier txt et de les stocker dans un tableau de structure.
+En premier lieu, nous utilisons la fonction strtock qui nous permet de scinder une chaîne de caractère pour ensuite la copier dans  différentes cases du tableau de structure en fonction de l'information qu'on veut récupérer.
+ex :
+
+char *token=strtok(carac,".");
+strcpy(movies[i].nom_film,token);
+La fonction strtok va scinder les caractères issu du fichier txt à chaque point puis grace à la fonction strcpy le contenu de token est copié dans le tableau de strucuture movies .
+
+La fonction void liste_film(Film *movies) affiche le détails de tous les films du fichier txt .
+
+La fonction void liste_realisateur(Film *movies) liste les réalisateur contenus dans la base de données avec leurs carctéristiques .
+
+La fonction void recherche_film(Film *movies) recherche les films dans la base de données 
+on utilise pour ceci une boucle while dans cette boucle la condition est tant que le film_rechercher ne correspond pas à un film de la basse de donnée on avance dans le fichier .Pour ce faire on utilise la fonction strmcp qui nous permet de comparer le nom du film dans la base de donné au nom du film recherché.
+
+La fonction void listeFilmParAnnee(Film *movies) liste les films par année l'utilisateur rentre l'année et la fonction lui retourne les films contenus dans la base de donnée à l'année indiquer. la boucle while va rechercher l'année indiquée par l'utilisateur qui est en fait stocker dans la variable choix du coup la condition dans la boucle while est :
+if(movies[i].annee_sortie==choix)
+
+la fonction main.c :
+Après déclaration du fichier .h et l'ouverture du fichier txt L'opérateur doit rentrer un chiffre et en fonction du chiffre rentré (qui est stocké  dans la variable choix) le switch case fait appel à la fonction qui répond à la demande de l'utilisateur .
+

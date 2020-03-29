@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1539516017 source:c:\users\sugee\onedrive\documents\etude\efrei\efrei l3 (alternance)\programmation c et c++\cinema (officiel)\main.c
+	<stdio.h>
+	<stdlib.h>
+	"cinema.h"
+
+1539515500 source:c:\users\sugee\onedrive\documents\etude\efrei\efrei l3 (alternance)\programmation c et c++\cinema (officiel)\cinema.c
+	<stdlib.h>
+	<stdio.h>
+	"cinema.h"
+	<string.h>
+
+1539515456 c:\users\sugee\onedrive\documents\etude\efrei\efrei l3 (alternance)\programmation c et c++\cinema (officiel)\cinema.h
+
